@@ -1,0 +1,7 @@
+---
+- hosts: group1
+  become: yes
+  tasks:
+   - name: print a msg
+     debug:
+             msg: welcome to playbooks

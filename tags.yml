@@ -1,0 +1,12 @@
+--- 
+- hosts: nodes
+  become: yes
+  tasks:
+          - name: install a webserver
+            debug:
+                    msg: webserver is installed
+            tags: web
+          - name: install a app server
+            debug:
+                    msg: app sever is installed
+            tags: app  

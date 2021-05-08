@@ -1,0 +1,9 @@
+---
+- hosts: nodes
+  become: yes
+  tasks:
+          - name: creating a users using loops
+            user: name={{item}} state=present
+            with_items:
+                  - samba2
+

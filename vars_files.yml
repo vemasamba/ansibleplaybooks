@@ -1,0 +1,11 @@
+--- #variables using through files
+- hosts: nodes
+  become: yes
+  vars_files:
+          - vars.yml
+  tasks:
+          - name: print a url through file
+            debug:
+                    msg: url={{URL}}
+
+

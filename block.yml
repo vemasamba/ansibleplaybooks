@@ -1,0 +1,11 @@
+---
+- hosts: nodes
+  become: yes
+  tasks:
+          - name: add a block of content in a file
+            blockinfile:
+                    path: /opt/file1
+                    block: 
+                              hello world, good mrng
+                              fdsbfbdsk dbfdkf k
+                    create: yes            

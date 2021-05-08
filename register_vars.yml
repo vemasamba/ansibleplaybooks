@@ -1,0 +1,10 @@
+---
+- hosts: nodes
+  become: yes
+  tasks:
+          - name: display a uptime status
+            shell: uptime
+            register: output
+          - name: print status
+            debug:
+                    msg: display uptime status={{output}}

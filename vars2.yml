@@ -1,0 +1,20 @@
+ 
+
+--- 
+- hosts: group1 
+  become: yes
+  vars:
+          URL: play.google.com
+  tasks:
+          - name: print a global variable
+            debug:
+                    msg: print url={{URL}}
+          - name: print a local
+            vars:
+                    URL: tasks.google.com
+            debug:
+                    msg: print url={{URL}}
+
+
+
+

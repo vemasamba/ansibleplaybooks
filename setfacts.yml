@@ -1,0 +1,21 @@
+---
+- hosts: nodes
+  become: yes
+  tasks:
+          - name: display uptime status
+            shell: uptime
+            register: output
+          - name: display uptime
+            debug:
+                 msg: uptime status={{output}}
+          - name: declare a variable
+            set_fact:
+                    status={{output.rc}}
+          - name: print a declared variable
+            debug:
+                    msg: status of uptime={{status}}
+
+
+            
+
+
